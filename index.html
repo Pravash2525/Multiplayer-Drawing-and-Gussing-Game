@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Multiplayer Drawing and Guessing Game</title>
+</head>
+
+<body>
+    <div class="game-container">
+        <canvas id="drawingCanvas" width="800" height="600" class="drawing-canvas"></canvas>
+        <div id="status" class="status">Player 1, start drawing!</div>
+        <input type="text" id="wordInput" placeholder="Enter a word for drawing">
+        <button id="submitDrawing">Submit Drawing</button>
+        <input type="text" id="guessInput" placeholder="Enter your guess">
+        <button id="submitGuess">Submit Guess</button>
+        <button id="resetButton">Reset</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

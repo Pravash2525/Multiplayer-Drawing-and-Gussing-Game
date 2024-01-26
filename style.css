@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.drawing-canvas {
+    border: 4px double #008000;
+    /* Green color for canvas border */
+    background-color: #87CEEB;
+    /* Sky Blue color for canvas background */
+    text-align: center;
+}
+
+input,
+button {
+    margin: 10px;
+    padding: 8px;
+    font-size: 14px;
+}
