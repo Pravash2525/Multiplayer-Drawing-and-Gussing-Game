@@ -7,12 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const guessInput = document.getElementById('guessInput');
     const submitGuessButton = document.getElementById('submitGuess');
     const resetButton = document.getElementById('resetButton');
+    const colorSelect = document.getElementById('colorSelect');
 
     let isDrawing = false;
     let drawingPlayer = 1;
     let wordToDraw = '';
     let guessedWord = '';
     let remainingChances = 3;
+    let selectedColor = colorSelect.value;
 
     canvas.addEventListener('mousedown', startDrawing);
     canvas.addEventListener('mousemove', draw);
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     submitDrawingButton.addEventListener('click', submitDrawing);
     submitGuessButton.addEventListener('click', handleGuess);
     resetButton.addEventListener('click', resetGame);
+    colorSelect.addEventListener('change', function() { selectedColor = colorSelect.value; });
 
     function startDrawing() {
         isDrawing = true;
@@ -34,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const y = event.clientY - canvas.offsetTop;
 
         context.lineCap = 'round';
-        context.lineWidth = 5;
-        context.strokeStyle = 'black';
+        context.lineWidth = 4;
+        context.strokeStyle = selectedColor; // Use the selected color
 
         context.lineTo(x, y);
         context.stroke();

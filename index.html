@@ -5,18 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Multiplayer Drawing and Guessing Game</title>
+    <title>Drawing and Guessing Game</title>
 </head>
 
-<body>
+<body style="text-align: center; background-image:url('jelly-fish.jpeg');background-size: 100% 100% ">
+
+    <h1 style="color:rgb(221, 51, 239)"><i> Welcome To The Drawing and Guessing Game </i></h1>
     <div class="game-container">
-        <canvas id="drawingCanvas" width="800" height="600" class="drawing-canvas"></canvas>
-        <div id="status" class="status">Player 1, start drawing!</div>
+        <canvas id="drawingCanvas" width="800" height="600" class="drawing-canvas" style="border: 2px solid #0000FF;  background: rgb(167, 242, 255) "></canvas>
+        <div id="status" class="status" style="color:rgb(51, 239, 236)"><i> Player 1, start drawing! </i></div>
         <input type="text" id="wordInput" placeholder="Enter a word for drawing">
         <button id="submitDrawing">Submit Drawing</button>
         <input type="text" id="guessInput" placeholder="Enter your guess">
         <button id="submitGuess">Submit Guess</button>
         <button id="resetButton">Reset</button>
+
+        <!-- Added color selection -->
+        <label for="colorSelect">Select Color:</label>
+        <select id="colorSelect">
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="purple">Purple</option>
+            <!-- Add more color options as needed -->
+        </select>
     </div>
     <script src="script.js"></script>
 </body>
