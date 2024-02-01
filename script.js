@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let drawingPlayer = 1;
     let wordToDraw = '';
     let guessedWord = '';
-    let remainingChances = 4;
+    let remainingChances = 3;
 
     canvas.addEventListener('mousedown', startDrawing);
     canvas.addEventListener('mousemove', draw);
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             wordInput.placeholder = '';
             wordInput.value = '';
             saveCanvasState();
-            statusElement.textContent = 'Player 2, guess the word! Remaining Chances: 4';
+            statusElement.textContent = 'Player 2, guess the word! Remaining Chances: 3';
             drawingPlayer = 2;
         }
     }
@@ -75,22 +75,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
     function handleGuess() {
         guessedWord = guessInput.value.toLowerCase();
         if (guessedWord === wordToDraw) {
-            showPopup('🎉 Congratulations! You have Won The Game');
+            showPopup('🎉 👈(❁´◡`❁)👉 🎉   Congratulations! You have Won The Game');
             resetGame();
         } else {
             remainingChances--;
             if (remainingChances === 0) {
-                showPopup('😢 You Have Lost The Game');
+                showPopup('😭😭😭  Sorry! You Have Lost The Game');
                 resetGame();
             } else {
+                showPopup('😰😰🥶  Wrong Answer! Try Again.');
                 statusElement.textContent = `Player 2, guess the word! Remaining Chances: ${remainingChances}`;
             }
         }
         guessInput.value = '';
     }
+
 
     function resetGame() {
         localStorage.clear();
@@ -99,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         drawingPlayer = 1;
         wordToDraw = '';
         guessedWord = '';
-        remainingChances = 4;
+        remainingChances = 3;
         wordInput.placeholder = 'Enter a word for drawing';
     }
 
